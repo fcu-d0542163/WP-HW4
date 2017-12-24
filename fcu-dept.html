@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>學院選單</title>
+  </head>
+  <body>
+    <h2>請選擇學院</h2>
+    <select id = "coll" onchange="coll_change(this.value)">
+
+    </select>
+
+    <h2>選擇系別</h2>
+    <select id = "coll2">
+        <option value = "0" >(空) </option>
+    </select>
+
+    <script type="text/javascript">
+      var collArr = ["請選擇","資電學院","商學院","工學院"];
+      //collPrinter(collArr);
+
+      var i=0;
+      var str = "";
+      var sele = document.getElementById("coll");
+      for(i=0;i<collArr.length;i++){
+            //document.getElementById('coll').innerHTML("<option value = 123 >" + arr[i] + "</option>");
+          str = str + '<option value = "'  + i + '" >' + collArr[i] + '</option>';
+        }
+      sele.innerHTML = str;
+
+      function coll_change(a) {
+          //alert(a);
+          var option = document.getElementById("coll2");
+          switch (a) {
+            case '0':
+              option.innerHTML = '<option value = "'  + '0' + '" >' + '(空)' + '</option>';
+              break;
+            case '1':
+              var names = ["資訊工程","電機","自動控制"];
+              var str1 = "";
+
+              for(var i=0;i<names.length;i++){
+                str1 = str1 + '<option value = "'  + i + '" >' + names[i] + '</option>';
+              }
+              option.innerHTML = str1;
+              break;
+            case '2':
+              var names = ["會計","企管","統計"];
+              var str1 = "";
+
+              for(var i=0;i<names.length;i++){
+                str1 = str1 + '<option value = "'  + i + '" >' + names[i] + '</option>';
+              }
+              option.innerHTML = str1;
+              break;
+            case '3':
+              var names = ["物理","化工","材料"];
+              var str1 = "";
+
+              for(var i=0;i<names.length;i++){
+                str1 = str1 + '<option value = "'  + i + '" >' + names[i] + '</option>';
+              }
+              option.innerHTML = str1;
+              break;
+            default:
+
+          }
+      }
+
+
+    </script>
+  </body>
+</html>
